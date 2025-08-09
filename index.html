@@ -157,7 +157,9 @@
 </p>
 
 <!-- Background Music -->
-<audio id="birthdayMusic" src="https://cdn.pixabay.com/download/audio/2022/10/16/audio_84b9f97e93.mp3?filename=happy-birthday-240655.mp3" preload="auto"></audio>
+<audio id="birthdayMusic" preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/16/audio_84b9f97e93.mp3?filename=happy-birthday-240655.mp3" type="audio/mpeg">
+</audio>
 
 <script>
     let balloonInterval, confettiInterval;
@@ -170,7 +172,7 @@
 
         if (envelope.classList.contains("open")) {
             music.currentTime = 0;
-            music.play();
+            music.play().catch(err => console.log("Playback blocked:", err));
 
             // Start balloons & confetti
             balloonInterval = setInterval(createBalloon, 800);
@@ -209,6 +211,3 @@
 
 </body>
 </html>
-
-
-
