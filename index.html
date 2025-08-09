@@ -172,6 +172,7 @@
             music.currentTime = 0;
             music.play();
 
+            // Start balloons & confetti
             balloonInterval = setInterval(createBalloon, 800);
             confettiInterval = setInterval(createConfetti, 150);
         } else {
@@ -179,6 +180,7 @@
             clearInterval(balloonInterval);
             clearInterval(confettiInterval);
 
+            // Remove all balloons & confetti from screen
             document.querySelectorAll(".balloon, .confetti").forEach(el => el.remove());
         }
     }
@@ -207,5 +209,3 @@
 
 </body>
 </html>
-
-
